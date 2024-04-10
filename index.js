@@ -11,6 +11,16 @@ loadConfig(async () => {
             name: "targetPlayer",
             type: "player",
             label: "Target player for info dump"
+        },
+        {
+            name: "buttonAction",
+            type: "action",
+            values: [
+                {
+                    name: "action1",
+                    label: "Click Here!"
+                }
+            ]
         }
     ]
 
@@ -25,8 +35,13 @@ loadConfig(async () => {
  * onConfigChange: listens for change in the config
  * CSGOGSI: GSI Event Listener Instance
  */
-onStart(async ({ CSGOGSI, config, close, onConfigChange }) => {
+onStart(async ({ CSGOGSI, config, close, onConfigChange, onAction }) => {
     const rounds = [];
+
+
+    onAction("buttonAction", data => {
+        console.log("Data from action button:", {data});
+    })
 
     /**
      * Accessing inital config
