@@ -1,7 +1,7 @@
 {
-    "name": "MVP Dumper",
-    "author": "Lexogrine",
-    "description": "string",
+    "name": "CS2 cam switcher by B3RC1",
+    "author": "Bertalan Varga-Molnár",
+    "description": "Automated ATEM switching triggered by spectated player change.",
     "version": "1.0",
     "main": "index.js"
 }
