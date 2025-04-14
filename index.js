@@ -270,6 +270,41 @@ onStart(async ({ CSGOGSI, config, close, onConfigChange, onAction }) => {
         } else if (inOneVsOne) {
             // SET 1v1 MODE OFF
             companionCall(compPath, compPage, 1, 7);
+            switch (data.player.steamid) {
+                case companionPlayer1:
+                    companionCall(compPath, compPage, 0, 1);
+                    break;
+                case companionPlayer2:
+                    companionCall(compPath, compPage, 0, 2);
+                    break;
+                case companionPlayer3:
+                    companionCall(compPath, compPage, 0, 3);
+                    break;
+                case companionPlayer4:
+                    companionCall(compPath, compPage, 0, 4);
+                    break;
+                case companionPlayer5:
+                    companionCall(compPath, compPage, 0, 5);
+                    break;
+                case companionPlayer6:
+                    companionCall(compPath, compPage, 1, 1);
+                    break;
+                case companionPlayer7:
+                    companionCall(compPath, compPage, 1, 2);
+                    break;
+                case companionPlayer8:
+                    companionCall(compPath, compPage, 1, 3);
+                    break;
+                case companionPlayer9:
+                    companionCall(compPath, compPage, 1, 4);
+                    break;
+                case companionPlayer10:
+                    companionCall(compPath, compPage, 1, 5);
+                    break;
+                default:
+                    companionCall(compPath, compPage, 2, 7); //How can it occur?
+            }
+            companionCall(compPath, compPage, 3, 7);
             console.log('1v1 situation over!');
             inOneVsOne = false;
             return false;
